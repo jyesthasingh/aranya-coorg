@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aranya Coorg | Boutique Hotel in the Coffee Hills</title>
+<meta name="description" content="Aranya is a boutique hotel in Coorg, Karnataka. Coffee-estate rooms, treehouses and heritage villas with AI-personalised stays. Book direct for 10% off and free breakfast.">
+<meta name="keywords" content="boutique hotel Coorg, Coorg resort, coffee estate stay, Madikeri hotel, weekend getaway from Bengaluru">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#1f3a2e; --forest-2:#2d5241; --cream:#f7f2e8; --sand:#ece3d0; --gold:#b8893b;
+  --ink:#1d1d1b; --muted:#6b6b63; --white:#fff; --ok:#2e7d4f; --radius:14px;
+  --shadow:0 10px 30px rgba(31,58,46,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+h1,h2,h3{font-family:"Cormorant Garamond",serif;font-weight:600;line-height:1.15}
+h2{font-size:clamp(2rem,4vw,2.8rem);color:var(--forest)}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+section{padding:80px 0}
+.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.75rem;color:var(--gold);font-weight:600;margin-bottom:8px}
+.lead{color:var(--muted);max-width:640px;margin-top:10px}
+.btn{display:inline-block;border:none;cursor:pointer;font:600 .95rem Inter,sans-serif;padding:12px 22px;border-radius:999px;background:var(--forest);color:#fff;text-decoration:none;transition:.2s}
+.btn:hover{background:var(--forest-2);transform:translateY(-1px)}
+.btn.gold{background:var(--gold)} .btn.gold:hover{background:#9e7330}
+.btn.ghost{background:transparent;border:1.5px solid var(--forest);color:var(--forest)}
+.btn.sm{padding:8px 14px;font-size:.85rem}
+.tag{display:inline-block;background:var(--sand);color:var(--forest);font-size:.75rem;padding:4px 10px;border-radius:999px;margin:2px 4px 2px 0}
+
+/* NAV */
+header{position:sticky;top:0;z-index:50;background:rgba(247,242,232,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--sand)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:"Cormorant Garamond",serif;font-size:1.7rem;font-weight:700;color:var(--forest);text-decoration:none}
+.logo span{color:var(--gold)}
+.nav ul{display:flex;gap:22px;list-style:none;font-size:.9rem}
+.nav ul a{text-decoration:none;color:var(--forest)}
+.nav ul a:hover{color:var(--gold)}
+.menu-btn{display:none;background:none;border:none;font-size:1.6rem;color:var(--forest);cursor:pointer}
+@media(max-width:900px){
+  .nav ul{display:none;position:absolute;top:68px;left:0;right:0;background:var(--cream);flex-direction:column;padding:20px;border-bottom:1px solid var(--sand)}
+  .nav ul.open{display:flex}
+  .menu-btn{display:block}
+  .nav .btn{display:none}
+}
+
+/* HERO */
+.hero{min-height:88vh;display:flex;align-items:center;color:#fff;padding:60px 0;
+  background:linear-gradient(rgba(20,40,30,.55),rgba(20,40,30,.65)),url("https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1800&q=80") center/cover,var(--forest)}
+.hero h1{font-size:clamp(2.6rem,6vw,4.6rem);max-width:780px}
+.hero p{max-width:560px;margin:16px 0 26px;font-size:1.08rem;opacity:.92}
+.offer{display:inline-block;background:var(--gold);color:#fff;font-size:.82rem;padding:6px 14px;border-radius:999px;margin-bottom:18px;font-weight:600}
+.searchbar{background:#fff;color:var(--ink);border-radius:var(--radius);padding:16px;display:grid;grid-template-columns:1fr 1fr .7fr auto;gap:12px;max-width:820px;box-shadow:var(--shadow)}
+.searchbar label{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);display:block}
+.searchbar input,.searchbar select{width:100%;border:none;border-bottom:1.5px solid var(--sand);padding:6px 0;font:500 1rem Inter,sans-serif;background:transparent}
+@media(max-width:700px){.searchbar{grid-template-columns:1fr 1fr}.searchbar .btn{grid-column:1/-1}}
+
+/* VALUE PROPS */
+.props{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:36px}
+.prop{background:#fff;border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.prop .ic{font-size:1.8rem}
+.prop h3{font-size:1.35rem;color:var(--forest);margin:8px 0 6px}
+.prop p{font-size:.9rem;color:var(--muted)}
+@media(max-width:900px){.props{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.props{grid-template-columns:1fr}}
+
+/* ROOMS */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px;margin-top:36px}
+.card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.card .img{height:200px;background:var(--forest-2) center/cover;position:relative}
+.card .img .badge{position:absolute;top:12px;left:12px;background:#fff;color:#b33;font-size:.75rem;font-weight:600;padding:4px 10px;border-radius:999px}
+.card .body{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{font-size:1.5rem;color:var(--forest)}
+.card .meta{font-size:.85rem;color:var(--muted)}
+.price{font-size:1.25rem;font-weight:600;color:var(--forest)}
+.price small{font-size:.8rem;color:var(--muted);font-weight:400}
+.price s{color:var(--muted);font-weight:400;font-size:.9rem;margin-right:6px}
+.card .actions{margin-top:auto;display:flex;gap:8px;align-items:center;justify-content:space-between}
+
+/* TOUR */
+.tour{background:var(--forest);color:#fff}
+.tour h2{color:#fff}
+.tour .lead{color:#cfdcd4}
+.tour-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0 16px}
+.tour-tabs button{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.25);padding:8px 16px;border-radius:999px;cursor:grab;font:500 .9rem Inter}
+.tour-tabs button.active{background:var(--gold);border-color:var(--gold)}
+.pano{height:440px;border-radius:var(--radius);background:#2d5241 0 50%/auto 100% repeat-x;cursor:grab;position:relative;overflow:hidden;user-select:none}
+.pano:active{cursor:grabbing}
+.pano .hint{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.55);padding:6px 14px;border-radius:999px;font-size:.8rem}
+.pano .caption{position:absolute;top:14px;left:14px;background:rgba(0,0,0,.55);padding:10px 14px;border-radius:10px;max-width:340px;font-size:.88rem}
+@media(max-width:600px){.pano{height:300px}}
+
+/* AI PLANNER */
+.planner{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:32px}
+@media(max-width:860px){.planner{grid-template-columns:1fr}}
+.panel{background:#fff;border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+.q{margin-bottom:18px}
+.q p{font-weight:600;margin-bottom:8px;color:var(--forest)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1.5px solid var(--sand);background:var(--cream);padding:7px 14px;border-radius:999px;cursor:pointer;font:500 .88rem Inter}
+.chip.on{background:var(--forest);color:#fff;border-color:var(--forest)}
+.result h3{font-size:1.8rem;color:var(--forest)}
+.result ul{margin:10px 0 10px 18px;font-size:.92rem}
+.ai-badge{display:inline-flex;align-items:center;gap:6px;background:#efe6d3;color:var(--forest);font-size:.75rem;font-weight:600;padding:4px 10px;border-radius:999px;margin-bottom:10px}
+.empty{color:var(--muted);text-align:center;padding:40px 10px}
+
+/* EXPERIENCES */
+.exp .card .img{height:160px}
+.exp .added{background:var(--ok)}
+
+/* LOYALTY */
+.circle{background:var(--sand)}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:30px}
+.tier{background:#fff;border-radius:var(--radius);padding:24px;border-top:5px solid var(--gold)}
+.tier h3{font-size:1.6rem;color:var(--forest)}
+.tier ul{margin:10px 0 0 18px;font-size:.9rem;color:var(--muted)}
+@media(max-width:800px){.tiers{grid-template-columns:1fr}}
+.join{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+.join input{flex:1;min-width:220px;padding:12px 16px;border-radius:999px;border:1.5px solid #d9cdb3;font:1rem Inter}
+
+/* REVIEWS */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px}
+@media(max-width:860px){.reviews{grid-template-columns:1fr}}
+.review{background:#fff;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);font-size:.92rem}
+.stars{color:var(--gold);letter-spacing:2px}
+.summary{background:#fff;border-left:5px solid var(--gold);border-radius:var(--radius);padding:20px;margin-top:28px;box-shadow:var(--shadow)}
+.bar-row{display:grid;grid-template-columns:110px 1fr 40px;gap:10px;align-items:center;font-size:.85rem;margin:6px 0}
+.bar{height:8px;background:var(--sand);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--forest)}
+
+/* BOARDROOM */
+.board{background:#13261d;color:#e9efe9}
+.board h2{color:#fff}
+.board .lead{color:#b7c7bd}
+.dim-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 18px}
+.dim-tabs button{background:transparent;color:#cfe0d5;border:1px solid #3c5a4a;padding:7px 13px;border-radius:999px;cursor:pointer;font:500 .82rem Inter}
+.dim-tabs button.active{background:var(--gold);color:#fff;border-color:var(--gold)}
+.dim{background:#1c3428;border-radius:var(--radius);padding:26px;min-height:200px}
+.dim h3{font-size:1.7rem;color:#fff;margin-bottom:10px}
+.dim ul{margin-left:18px} .dim li{margin:5px 0}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}
+@media(max-width:800px){.kpis{grid-template-columns:1fr 1fr}}
+.kpi{background:#1c3428;border-radius:12px;padding:16px}
+.kpi .v{font-size:1.6rem;font-weight:600;color:#fff}
+.kpi .l{font-size:.75rem;color:#9fb5a8;text-transform:uppercase;letter-spacing:.08em}
+.dash{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+@media(max-width:800px){.dash{grid-template-columns:1fr}}
+.dash .dim .bar{background:#2c4a3b} .dash .dim .bar i{background:var(--gold)}
+.dash .bar-row{grid-template-columns:130px 1fr 60px}
+
+/* MODAL */
+.modal{position:fixed;inset:0;background:rgba(10,20,15,.6);display:none;align-items:center;justify-content:center;z-index:100;padding:16px}
+.modal.open{display:flex}
+.modal-box{background:#fff;border-radius:18px;max-width:640px;width:100%;max-height:92vh;overflow:auto;padding:28px;position:relative}
+.close{position:absolute;top:14px;right:16px;border:none;background:none;font-size:1.5rem;cursor:pointer;color:var(--muted)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.form-grid .full{grid-column:1/-1}
+.form-grid label{font-size:.78rem;color:var(--muted);display:block;margin-bottom:3px}
+.form-grid input,.form-grid select{width:100%;padding:10px 12px;border:1.5px solid var(--sand);border-radius:10px;font:1rem Inter}
+.addons label{display:flex;gap:8px;align-items:center;font-size:.9rem;margin:4px 0;color:var(--ink)}
+.breakdown{background:var(--cream);border-radius:12px;padding:14px 16px;margin-top:14px;font-size:.92rem}
+.breakdown div{display:flex;justify-content:space-between;margin:3px 0}
+.breakdown .tot{font-weight:700;font-size:1.1rem;border-top:1px solid #d9cdb3;padding-top:8px;margin-top:8px;color:var(--forest)}
+.timeline{margin:16px 0 0;list-style:none}
+.timeline li{padding:8px 0 8px 28px;position:relative;font-size:.9rem;border-left:2px solid var(--sand);margin-left:8px}
+.timeline li::before{content:"";position:absolute;left:-7px;top:13px;width:12px;height:12px;border-radius:50%;background:var(--gold)}
+.err{color:#b33;font-size:.85rem;margin-top:8px}
+
+/* CHAT */
+.chat-fab{position:fixed;right:20px;bottom:20px;z-index:90;background:var(--forest);color:#fff;border:none;border-radius:999px;padding:14px 20px;font:600 .95rem Inter;cursor:pointer;box-shadow:var(--shadow)}
+.chat{position:fixed;right:20px;bottom:84px;z-index:95;width:350px;max-width:calc(100vw - 40px);height:480px;max-height:70vh;background:#fff;border-radius:18px;box-shadow:0 20px 50px rgba(0,0,0,.25);display:none;flex-direction:column;overflow:hidden}
+.chat.open{display:flex}
+.chat-head{background:var(--forest);color:#fff;padding:14px 16px}
+.chat-head b{font-family:"Cormorant Garamond",serif;font-size:1.3rem}
+.chat-head small{display:block;opacity:.8;font-size:.75rem}
+.chat-log{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:8px;background:var(--cream)}
+.msg{max-width:85%;padding:9px 13px;border-radius:14px;font-size:.88rem}
+.msg.bot{background:#fff;align-self:flex-start;border-bottom-left-radius:4px}
+.msg.me{background:var(--forest);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.quick{display:flex;gap:6px;flex-wrap:wrap;padding:8px 12px;background:#fff;border-top:1px solid var(--sand)}
+.quick button{font:500 .75rem Inter;border:1px solid var(--sand);background:var(--cream);border-radius:999px;padding:5px 10px;cursor:pointer}
+.chat form{display:flex;border-top:1px solid var(--sand)}
+.chat input{flex:1;border:none;padding:12px;font:.9rem Inter;outline:none}
+.chat form button{border:none;background:var(--gold);color:#fff;padding:0 16px;cursor:pointer;font-weight:600}
+
+footer{background:var(--forest);color:#cfdcd4;padding:50px 0 30px;font-size:.9rem}
+.foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
+@media(max-width:700px){.foot{grid-template-columns:1fr}}
+footer h4{color:#fff;margin-bottom:10px}
+footer .logo{color:#fff}
+.toast{position:fixed;left:50%;bottom:30px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 20px;border-radius:999px;font-size:.9rem;z-index:200;display:none}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo">Aranya<span>.</span></a>
+    <ul id="navlinks">
+      <li><a href="#rooms">Stay</a></li>
+      <li><a href="#tour">Virtual Tour</a></li>
+      <li><a href="#planner">AI Trip Designer</a></li>
+      <li><a href="#experiences">Experiences</a></li>
+      <li><a href="#circle">Aranya Circle</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#boardroom">Boardroom</a></li>
+    </ul>
+    <button class="btn gold sm" onclick="openBooking()">Book Direct</button>
+    <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <span class="offer">Book direct: 10% off + free Kodava breakfast + late checkout</span>
+    <h1>Wake up inside a coffee forest.</h1>
+    <p>Aranya is an 18-room boutique hotel in Coorg's coffee hills. Treehouses, heritage villas and stays our AI concierge designs around you. Four and a half hours from Bengaluru, a world away from it.</p>
+    <div class="searchbar">
+      <div><label>Check-in</label><input type="date" id="sIn"></div>
+      <div><label>Check-out</label><input type="date" id="sOut"></div>
+      <div><label>Guests</label><select id="sGuests"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></div>
+      <button class="btn" onclick="checkAvailability()">Check availability</button>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE PROPOSITION -->
+<section id="why">
+  <div class="wrap">
+    <div class="eyebrow">Why Aranya</div>
+    <h2>Not a hotel stay. A stay designed for you.</h2>
+    <p class="lead">Big chains give you a room. Booking sites give you a list. We give you a personalised Coorg itinerary, a room in the forest and a team that knows your name before you arrive.</p>
+    <div class="props">
+      <div class="prop"><div class="ic">🌿</div><h3>Only 18 rooms</h3><p>Private, quiet and set inside a working 40-acre coffee estate.</p></div>
+      <div class="prop"><div class="ic">✨</div><h3>AI-personalised stays</h3><p>Tell us your mood; our Trip Designer builds the room, meals and experiences.</p></div>
+      <div class="prop"><div class="ic">🤝</div><h3>Local, for real</h3><p>Experiences run with Kodava families, planters and naturalists from the village.</p></div>
+      <div class="prop"><div class="ic">💰</div><h3>Best rate direct</h3><p>Always cheaper here than on any booking app, with perks you won't get anywhere else.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ROOMS -->
+<section id="rooms" style="padding-top:20px">
+  <div class="wrap">
+    <div class="eyebrow">Stay</div>
+    <h2>Rooms, suites & a treehouse</h2>
+    <p class="lead">Prices shown are direct-booking rates per night. Weekends (Fri & Sat) carry a 15% demand premium.</p>
+    <div class="grid" id="roomGrid"></div>
+  </div>
+</section>
+
+<!-- VIRTUAL TOUR -->
+<section class="tour" id="tour">
+  <div class="wrap">
+    <div class="eyebrow">Virtual Tour</div>
+    <h2>Walk through Aranya before you arrive</h2>
+    <p class="lead">Drag the image left or right to look around. Choose a space below.</p>
+    <div class="tour-tabs" id="tourTabs"></div>
+    <div class="pano" id="pano">
+      <div class="caption" id="panoCap"></div>
+      <div class="hint">⟵ drag to look around ⟶</div>
+    </div>
+  </div>
+</section>
+
+<!-- AI TRIP DESIGNER -->
+<section id="planner">
+  <div class="wrap">
+    <div class="eyebrow">AI Trip Designer</div>
+    <h2>Answer 4 questions. Get your perfect stay.</h2>
+    <p class="lead">Our recommendation engine matches your purpose, interests and budget to the right room and experiences, and prices the whole package instantly.</p>
+    <div class="planner">
+      <div class="panel" id="quiz"></div>
+      <div class="panel result" id="quizResult"><div class="empty">✨<br>Your personalised package will appear here.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCES -->
+<section id="experiences" class="exp" style="padding-top:20px">
+  <div class="wrap">
+    <div class="eyebrow">Local Experiences</div>
+    <h2>Coorg, the way locals live it</h2>
+    <p class="lead">Add experiences to your stay. They are carried into your booking automatically.</p>
+    <div class="grid" id="expGrid"></div>
+  </div>
+</section>
+
+<!-- LOYALTY -->
+<section class="circle" id="circle">
+  <div class="wrap">
+    <div class="eyebrow">Loyalty programme</div>
+    <h2>The Aranya Circle</h2>
+    <p class="lead">Free to join. Earn 1 Leaf for every ₹100 spent; 100 Leaves = ₹500 off your next stay.</p>
+    <div class="tiers">
+      <div class="tier"><h3>Seedling</h3><p class="meta">On joining</p><ul><li>Member rate: extra 5% off</li><li>Welcome drink & estate walk</li><li>Birthday surprise</li></ul></div>
+      <div class="tier"><h3>Sapling</h3><p class="meta">After 2 stays</p><ul><li>Free room upgrade (subject to availability)</li><li>Late checkout till 2 PM</li><li>Coffee hamper on departure</li></ul></div>
+      <div class="tier"><h3>Banyan</h3><p class="meta">After 5 stays</p><ul><li>One free night every year</li><li>Private dinner with the planter</li><li>Priority festive-season booking</li></ul></div>
+    </div>
+    <form class="join" onsubmit="joinCircle(event)">
+      <input type="email" id="joinEmail" placeholder="Your email address" required>
+      <button class="btn">Join free & get code</button>
+    </form>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="eyebrow">Guest reviews</div>
+    <h2>4.8 / 5 from 312 guests</h2>
+    <div class="summary">
+      <div class="ai-badge">✨ AI review summary</div>
+      <p><b>What guests love:</b> the treehouse views, the Kodava pandi curry breakfast and how staff remembered small preferences. <b>What to know:</b> the last 2 km is a narrow estate road, and the villa's plunge pool is unheated in December.</p>
+      <div style="margin-top:12px" id="aspects"></div>
+    </div>
+    <div class="reviews" id="reviewGrid"></div>
+  </div>
+</section>
+
+<!-- BOARDROOM -->
+<section class="board" id="boardroom">
+  <div class="wrap">
+    <div class="eyebrow">For the board & investors</div>
+    <h2>Boardroom: the business behind the website</h2>
+    <p class="lead">How Aranya makes money, wins customers and measures success. The KPI dashboard below updates live as you make demo bookings on this site.</p>
+    <div class="dim-tabs" id="dimTabs"></div>
+    <div class="dim" id="dimBody"></div>
+
+    <h3 style="font-size:1.9rem;color:#fff;margin-top:46px">Live KPI dashboard</h3>
+    <p class="lead">Every visit, room view, quiz, chat and booking on this website is tracked. Load sample data to show a full month.</p>
+    <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn gold sm" onclick="seedData()">Load sample month (Oct 2026)</button>
+      <button class="btn sm" style="background:#2c4a3b" onclick="resetData()">Reset data</button>
+    </div>
+    <div class="kpis" id="kpis"></div>
+    <div class="dash">
+      <div class="dim"><h3 style="font-size:1.3rem">Booking funnel</h3><div id="funnel"></div></div>
+      <div class="dim"><h3 style="font-size:1.3rem">Revenue by room type</h3><div id="revByRoom"></div></div>
+      <div class="dim"><h3 style="font-size:1.3rem">Booking channel mix</h3><div id="channels"></div></div>
+      <div class="dim"><h3 style="font-size:1.3rem">AI feature engagement</h3><div id="aiStats"></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div><div class="logo">Aranya<span>.</span></div><p style="margin-top:10px">Aranya Boutique Hotel, Coffee Estate Road, near Madikeri, Kodagu, Karnataka.<br>Concept website for the MBA Digital Business Challenge 2026.</p></div>
+    <div><h4>Explore</h4><p><a href="#rooms">Rooms</a><br><a href="#planner">AI Trip Designer</a><br><a href="#experiences">Experiences</a><br><a href="#circle">Aranya Circle</a></p></div>
+    <div><h4>Contact</h4><p>stay@aranya-coorg.example<br>WhatsApp concierge 24×7<br>Instagram @aranya.coorg</p></div>
+  </div>
+</footer>
+
+<!-- BOOKING MODAL -->
+<div class="modal" id="bookModal">
+  <div class="modal-box" id="bookBox"></div>
+</div>
+
+<!-- CHATBOT -->
+<button class="chat-fab" onclick="toggleChat()">💬 Ask Aranya AI</button>
+<div class="chat" id="chat">
+  <div class="chat-head"><b>Aranya AI Concierge</b><small>Replies instantly · hands over to a human anytime</small></div>
+  <div class="chat-log" id="chatLog"></div>
+  <div class="quick">
+    <button onclick="ask('What are your room rates?')">Rates</button>
+    <button onclick="ask('How do I reach Aranya?')">How to reach</button>
+    <button onclick="ask('Plan a romantic weekend')">Romantic trip</button>
+    <button onclick="ask('Cancellation policy?')">Cancellation</button>
+  </div>
+  <form onsubmit="sendChat(event)"><input id="chatIn" placeholder="Ask anything about your stay..."><button>Send</button></form>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ---------------- DATA ---------------- */
+const IMG = id => `https://images.unsplash.com/${id}?w=900&q=75`;
+const ROOMS = [
+  {id:"estate", name:"Coffee Estate Room", rate:6500, guests:2, size:"28 m²", left:3, inventory:8,
+   img:IMG("photo-1611892440504-42a792e24d32"), tags:["Estate view","Balcony","King bed"],
+   desc:"Warm wood, estate-view balcony and freshly brewed Coorg coffee every morning."},
+  {id:"canopy", name:"Forest Canopy Suite", rate:9800, guests:3, size:"42 m²", left:2, inventory:5,
+   img:IMG("photo-1590490360182-c33d57733427"), tags:["Valley view","Bathtub","Sit-out"],
+   desc:"A suite at treetop level with a deep soaking tub facing the misty valley."},
+  {id:"tree", name:"Treehouse Hideaway", rate:12000, guests:2, size:"35 m²", left:1, inventory:2,
+   img:IMG("photo-1582719478250-c89cae4dc85b"), tags:["Couples","Hammock deck","Stargazing"],
+   desc:"Built around a 100-year-old silver oak. Our most-booked room for anniversaries."},
+  {id:"villa", name:"Heritage Kodava Villa", rate:14500, guests:4, size:"85 m²", left:2, inventory:3,
+   img:IMG("photo-1542314831-068cd1dbfeeb"), tags:["Plunge pool","Family","Private chef"],
+   desc:"A restored Ainmane-style villa with a private plunge pool and courtyard."}
+];
+const EXPS = [
+  {id:"coffee", name:"Bean-to-Cup Plantation Walk", price:1200, icon:"☕", img:IMG("photo-1447933601403-0c6688de566e"), desc:"Pick, roast and brew with our estate's planter. 2 hrs."},
+  {id:"cook", name:"Kodava Cooking Class", price:1800, icon:"🍛", img:IMG("photo-1556910103-1c02745aae4d"), desc:"Learn pandi curry and akki otti in a family kitchen."},
+  {id:"trek", name:"Mandalpatti Sunrise Jeep & Trek", price:2200, icon:"🌄", img:IMG("photo-1464822759023-fed622ff2c3b"), desc:"Above the clouds at dawn with a naturalist guide."},
+  {id:"spa", name:"Ayurvedic Forest Spa", price:3500, icon:"🌿", img:IMG("photo-1544161515-4ab6ce6db874"), desc:"90-minute Abhyanga massage in an open-air pavilion."},
+  {id:"dinner", name:"Candlelit Estate Dinner", price:4000, icon:"🕯️", img:IMG("photo-1414235077428-338989a2e8c0"), desc:"Private 5-course dinner for two among the coffee bushes."},
+  {id:"river", name:"Dubare River & Rafting Day", price:2500, icon:"🛶", img:IMG("photo-1530866495561-507c9faab2ed"), desc:"Cauvery river day trip with rafting (seasonal)."}
+];
+const TOUR = [
+  {name:"Lobby & Courtyard", img:"photo-1551882547-ff40c63fe5fa", cap:"Check-in happens over filter coffee in the open courtyard. No queues; your key is ready."},
+  {name:"Treehouse", img:"photo-1582719478250-c89cae4dc85b", cap:"Hammock deck, rain shower and a skylight above the bed for stargazing."},
+  {name:"Infinity Pool", img:"photo-1520250497591-112f2f40a3f4", cap:"Heated infinity pool overlooking the Brahmagiri range. Open 7 AM to 9 PM."},
+  {name:"Restaurant", img:"photo-1414235077428-338989a2e8c0", cap:"'Kaapi & Kole' serves Kodava, South Indian and farm-to-table global menus."},
+  {name:"Estate Grounds", img:"photo-1566073771259-6a8506099945", cap:"40 acres of coffee, pepper and cardamom with marked walking trails."}
+];
+const REVIEWS = [
+  {n:"Ananya & Rohit, Bengaluru", s:5, t:"Booked the Treehouse for our anniversary. The AI planner suggested the candlelit dinner and it was the best night of the year."},
+  {n:"Meera K., Mumbai", s:5, t:"Workcation done right. Fast Wi-Fi, a desk with a valley view and staff who remembered I take coffee without sugar."},
+  {n:"The Iyer family, Chennai", s:4, t:"Villa was perfect for the kids. The last stretch of road is bumpy, but the cooking class made up for it."}
+];
+const DIMS = [
+  {k:"Business model", h:"How Aranya makes money", li:[
+    "<b>Room revenue (~70%)</b>: 18 rooms, blended ADR ≈ ₹10,000, dynamic pricing (+15% weekends, festive peaks).",
+    "<b>Experiences & F&B (~22%)</b>: high-margin add-ons sold during booking and via the AI Trip Designer.",
+    "<b>Events & retail (~8%)</b>: intimate weddings, offsites, and estate coffee sold online.",
+    "<b>Direct-booking focus</b>: every booking moved off OTAs saves 15–20% commission.",
+    "Target: 65% occupancy → ~₹4.3 Cr annual room revenue (18 × 365 × 0.65 × ₹10,000)."]},
+  {k:"Target customer", h:"Who the website is designed for", li:[
+    "<b>Urban couples (28–40)</b> from Bengaluru, Chennai, Hyderabad, Mumbai: anniversaries & weekend escapes.",
+    "<b>Remote professionals</b> seeking workcations with reliable Wi-Fi.",
+    "<b>Young families</b> wanting safe nature holidays with activities for kids.",
+    "<b>Corporate teams</b> (10–30 people) for small offsites and leadership retreats."]},
+  {k:"Value proposition", h:"Why guests choose Aranya", li:[
+    "Personalised stays, not just rooms: the AI Trip Designer builds the whole trip in under a minute.",
+    "Authentic Kodava experiences, run with local families, that chains cannot copy.",
+    "Best price guaranteed when booking direct, plus perks (breakfast, late checkout, loyalty Leaves).",
+    "Intimacy of 18 rooms with the polish of a luxury brand."]},
+  {k:"Customer journey", h:"Awareness → Consideration → Purchase → Loyalty", li:[
+    "<b>Awareness</b>: Instagram reels, Google search ('boutique hotel Coorg'), travel influencers, Google Hotel Ads.",
+    "<b>Consideration</b>: virtual tour, AI review summary, transparent pricing, chatbot answering questions 24×7.",
+    "<b>Purchase</b>: 3-step booking, instant confirmation, UPI/card payment, add-ons in the same flow.",
+    "<b>Stay</b>: WhatsApp pre-arrival, personalised welcome, in-stay concierge.",
+    "<b>Loyalty</b>: Aranya Circle Leaves, anniversary reminders, referral credits and return-guest offers."]},
+  {k:"Website UX", h:"Easy and intuitive by design", li:[
+    "Availability search in the first screen; 'Book Direct' visible on every scroll.",
+    "Mobile-first layout (70%+ of hotel searches are on phones).",
+    "Booking in 3 steps with a live price breakdown: no surprise taxes at the end.",
+    "Scarcity and trust cues: 'only 1 left', verified reviews, clear cancellation policy.",
+    "Chat button on every page so no question blocks a booking."]},
+  {k:"Digital marketing", h:"SEO, social media and campaigns", li:[
+    "<b>SEO</b>: pages and blogs for 'Coorg weekend getaway', 'treehouse stay Karnataka', 'workcation Coorg'.",
+    "<b>Instagram & YouTube</b>: treehouse reels, monsoon content, guest stories, creator stays.",
+    "<b>Performance</b>: Google Hotel Ads + Meta retargeting of visitors who started but did not finish booking.",
+    "<b>Campaigns</b>: 'Monsoon in the Mist' (Jun–Sep), 'Coffee Harvest Season' (Dec–Feb), corporate offsite packages.",
+    "<b>CRM</b>: email/WhatsApp to Aranya Circle members with anniversary and festive offers."]},
+  {k:"AI / GenAI", h:"Where AI improves the experience", li:[
+    "<b>AI Trip Designer</b>: recommends room + experiences from guest preferences (live on this site).",
+    "<b>AI Concierge chatbot</b>: answers FAQs 24×7, recommends packages, hands off to humans (live).",
+    "<b>AI review summary</b>: condenses hundreds of reviews into likes, watch-outs and aspect scores (live).",
+    "<b>Dynamic pricing</b>: demand-based rates by day of week, season and occupancy (weekend logic live).",
+    "<b>Next steps</b>: LLM-written pre-arrival itineraries, churn prediction for loyalty members, GenAI-made social creatives."]},
+  {k:"Operations", h:"What happens after the guest clicks Book", li:[
+    "Instant confirmation ID + email/WhatsApp; booking enters the Property Management System.",
+    "Channel manager blocks the room on OTAs to avoid double-booking.",
+    "Experience partners (chef, guide, spa) receive automatic slot requests.",
+    "T-3 days: pre-arrival WhatsApp to collect arrival time, diet and occasion.",
+    "Arrival: personalised welcome; after checkout: feedback request and loyalty Leaves credited."]},
+  {k:"Analytics", h:"KPIs management tracks", li:[
+    "<b>Revenue</b>: Occupancy %, ADR, RevPAR, total revenue, ancillary revenue per booking.",
+    "<b>Website</b>: visit-to-booking conversion, booking abandonment, funnel drop-off by step.",
+    "<b>Channel</b>: direct vs OTA share, customer acquisition cost, ROAS on ads.",
+    "<b>Customer</b>: repeat-guest rate, loyalty sign-ups, NPS / review score.",
+    "<b>AI</b>: chatbot containment rate, Trip Designer → booking conversion, add-on attach rate."]},
+  {k:"Competitive advantage", h:"Why this website beats competitors", li:[
+    "OTAs list thousands of hotels; Aranya's site sells a <b>personalised experience</b> they cannot.",
+    "Chains have scale but not authenticity: our local partnerships are hard to copy.",
+    "Direct-booking economics fund better perks, so the best deal is always on our site.",
+    "Owned first-party data (preferences, occasions) makes every repeat stay more personal: a data flywheel."]}
+];
+
+/* ---------------- STORAGE & TRACKING ---------------- */
+const store = {
+  get(k, d){ try{ const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; }catch(e){ return d; } },
+  set(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+};
+let mem = { events: store.get("aranya_events", {}), bookings: store.get("aranya_bookings", []), members: store.get("aranya_members", []) };
+function track(ev, n=1){ mem.events[ev] = (mem.events[ev]||0) + n; store.set("aranya_events", mem.events); renderDashboard(); }
+
+/* ---------------- HELPERS ---------------- */
+const inr = n => "₹" + Math.round(n).toLocaleString("en-IN");
+const $ = id => document.getElementById(id);
+function toast(t){ const el=$("toast"); el.textContent=t; el.style.display="block"; clearTimeout(el._t); el._t=setTimeout(()=>el.style.display="none",2600); }
+function iso(d){ return d.toISOString().slice(0,10); }
+function addDays(d,n){ const x=new Date(d); x.setDate(x.getDate()+n); return x; }
+function nightsBetween(a,b){ return Math.round((new Date(b)-new Date(a))/86400000); }
+
+/* default dates */
+(function(){ const t=addDays(new Date(),7); $("sIn").value=iso(t); $("sOut").value=iso(addDays(t,2)); $("sIn").min=iso(new Date()); })();
+
+/* ---------------- ROOMS ---------------- */
+function renderRooms(){
+  $("roomGrid").innerHTML = ROOMS.map(r=>`
+    <div class="card">
+      <div class="img" style="background-image:url('${r.img}')"><span class="badge">Only ${r.left} left</span></div>
+      <div class="body">
+        <h3>${r.name}</h3>
+        <div class="meta">${r.size} · up to ${r.guests} guests</div>
+        <div>${r.tags.map(t=>`<span class="tag">${t}</span>`).join("")}</div>
+        <p style="font-size:.9rem;color:var(--muted)">${r.desc}</p>
+        <div class="actions">
+          <div class="price"><s>${inr(r.rate/0.9)}</s>${inr(r.rate)} <small>/ night</small></div>
+          <button class="btn sm" onclick="openBooking('${r.id}')">Book</button>
+        </div>
+      </div>
+    </div>`).join("");
+}
+function checkAvailability(){
+  const n = nightsBetween($("sIn").value,$("sOut").value);
+  if(!(n>0)){ toast("Check-out must be after check-in"); return; }
+  track("room_views");
+  document.getElementById("rooms").scrollIntoView();
+  toast(`Great news: all room types are available for ${n} night${n>1?"s":""}.`);
+}
+
+/* ---------------- TOUR ---------------- */
+let tourIdx=0, panoX=0;
+function renderTour(){
+  $("tourTabs").innerHTML = TOUR.map((t,i)=>`<button class="${i===tourIdx?"active":""}" onclick="setTour(${i})">${t.name}</button>`).join("");
+  const p=$("pano"); p.style.backgroundImage=`url('https://images.unsplash.com/${TOUR[tourIdx].img}?w=1800&q=75')`;
+  $("panoCap").innerHTML=`<b>${TOUR[tourIdx].name}</b><br>${TOUR[tourIdx].cap}`;
+}
+function setTour(i){ tourIdx=i; renderTour(); track("tour_views"); }
+(function(){
+  const p=$("pano"); let down=false,startX=0,base=0;
+  const start=x=>{down=true;startX=x;base=panoX;};
+  const move=x=>{ if(!down) return; panoX=base+(x-startX); p.style.backgroundPosition=`${panoX}px 50%`; };
+  p.addEventListener("mousedown",e=>start(e.clientX));
+  window.addEventListener("mousemove",e=>move(e.clientX));
+  window.addEventListener("mouseup",()=>down=false);
+  p.addEventListener("touchstart",e=>start(e.touches[0].clientX),{passive:true});
+  p.addEventListener("touchmove",e=>move(e.touches[0].clientX),{passive:true});
+  p.addEventListener("touchend",()=>down=false);
+})();
+
+/* ---------------- AI TRIP DESIGNER ---------------- */
+const QUIZ = [
+  {k:"purpose", q:"What's the occasion?", o:["Romantic getaway","Family holiday","Workcation","Adventure","Wellness reset"]},
+  {k:"group", q:"How many guests?", o:["1","2","3","4"]},
+  {k:"nights", q:"How many nights?", o:["2","3","4","5"]},
+  {k:"budget", q:"Budget per night (room)?", o:["Under ₹8,000","₹8,000–₹13,000","₹13,000+"]}
+];
+let answers = {purpose:"Romantic getaway", group:"2", nights:"2", budget:"₹8,000–₹13,000"};
+function renderQuiz(){
+  $("quiz").innerHTML = QUIZ.map(q=>`<div class="q"><p>${q.q}</p><div class="chips">${
+    q.o.map(o=>`<button class="chip ${answers[q.k]===o?"on":""}" onclick="pick('${q.k}','${o}')">${o}</button>`).join("")}</div></div>`).join("")
+    + `<button class="btn gold" onclick="designTrip()">✨ Design my stay</button>`;
+}
+function pick(k,v){ answers[k]=v; renderQuiz(); }
+let lastPackage=null;
+function designTrip(){
+  track("quiz_completed");
+  const g=+answers.group, n=+answers.nights, p=answers.purpose, b=answers.budget;
+  // scoring: rooms that fit guests, weighted by purpose & budget
+  const purposeFit={ "Romantic getaway":{tree:3,canopy:2,estate:1,villa:0}, "Family holiday":{villa:3,canopy:2,estate:1,tree:0},
+    "Workcation":{estate:3,canopy:2,tree:1,villa:0}, "Adventure":{estate:2,tree:2,canopy:1,villa:1}, "Wellness reset":{canopy:3,tree:2,villa:2,estate:1}};
+  const budgetMax = b.startsWith("Under")?8000 : b.startsWith("₹8")?13000 : 99999;
+  const scored = ROOMS.filter(r=>r.guests>=g).map(r=>({r, s:(purposeFit[p][r.id]||0)*2 + (r.rate<=budgetMax?3:-3)})).sort((a,b)=>b.s-a.s);
+  if(!scored.length){ $("quizResult").innerHTML=`<div class="empty">No single room fits ${g} guests in this budget. Try the Heritage Villa, or ask our concierge about two connecting rooms.</div>`; return; }
+  const room = scored[0].r;
+  const expMap={ "Romantic getaway":["dinner","spa","coffee"], "Family holiday":["cook","river","coffee"], "Workcation":["coffee","spa"],
+    "Adventure":["trek","river","coffee"], "Wellness reset":["spa","trek","cook"]};
+  const exps = expMap[p].map(id=>EXPS.find(e=>e.id===id));
+  const names={ "Romantic getaway":"The Misty Romance", "Family holiday":"Little Explorers of Kodagu", "Workcation":"Work From the Woods",
+    "Adventure":"Peaks & Rivers", "Wellness reset":"Forest Healing Retreat"};
+  const roomCost=room.rate*n, expCost=exps.reduce((a,e)=>a+e.price,0);
+  const pkgDisc=Math.round((roomCost+expCost)*0.05);
+  lastPackage={room:room.id, exps:exps.map(e=>e.id), nights:n, guests:g, name:names[p]};
+  $("quizResult").innerHTML=`
+    <div class="ai-badge">✨ Recommended for you · ${Math.min(98, 80+scored[0].s)}% match</div>
+    <h3>${names[p]}</h3>
+    <p style="color:var(--muted);font-size:.92rem">${n} nights · ${g} guest${g>1?"s":""} · ${p}</p>
+    <ul>
+      <li><b>Room:</b> ${room.name} (${inr(room.rate)}/night)</li>
+      ${exps.map(e=>`<li><b>${e.icon} ${e.name}</b> (${inr(e.price)})</li>`).join("")}
+      <li>Free Kodava breakfast daily + welcome coffee hamper</li>
+    </ul>
+    <p style="font-size:.88rem;color:var(--muted)">Why this: ${room.desc}</p>
+    <div class="breakdown">
+      <div><span>Room × ${n} nights</span><span>${inr(roomCost)}</span></div>
+      <div><span>Experiences</span><span>${inr(expCost)}</span></div>
+      <div><span>Package saving (5%)</span><span>−${inr(pkgDisc)}</span></div>
+      <div class="tot"><span>Package from</span><span>${inr(roomCost+expCost-pkgDisc)}</span></div>
+    </div>
+    <button class="btn gold" style="margin-top:14px" onclick="bookPackage()">Book this package</button>`;
+}
+function bookPackage(){ if(!lastPackage) return; cart=new Set(lastPackage.exps); renderExps(); track("quiz_to_booking");
+  const t=addDays(new Date(),7); openBooking(lastPackage.room, iso(t), iso(addDays(t,lastPackage.nights)), lastPackage.guests, true); }
+
+/* ---------------- EXPERIENCES ---------------- */
+let cart = new Set();
+function renderExps(){
+  $("expGrid").innerHTML = EXPS.map(e=>`
+    <div class="card">
+      <div class="img" style="background-image:url('${e.img}')"></div>
+      <div class="body"><h3>${e.icon} ${e.name}</h3><p style="font-size:.9rem;color:var(--muted)">${e.desc}</p>
+      <div class="actions"><div class="price">${inr(e.price)} <small>/ booking</small></div>
+      <button class="btn sm ${cart.has(e.id)?"added":""}" onclick="toggleExp('${e.id}')">${cart.has(e.id)?"✓ Added":"Add to stay"}</button></div></div>
+    </div>`).join("");
+}
+function toggleExp(id){ cart.has(id)?cart.delete(id):cart.add(id); renderExps(); toast(cart.has(id)?"Added to your stay":"Removed"); }
+
+/* ---------------- BOOKING ---------------- */
+let bk={};
+function openBooking(roomId, cin, cout, guests, isPackage){
+  track("booking_started");
+  bk = { room: roomId||"estate", cin: cin||$("sIn").value, cout: cout||$("sOut").value, guests: guests||+$("sGuests").value,
+         source: isPackage?"AI Trip Designer":"Website", promo:"" };
+  renderBookForm(); $("bookModal").classList.add("open");
+}
+function closeBooking(){ $("bookModal").classList.remove("open"); }
+$("bookModal").addEventListener("click",e=>{ if(e.target.id==="bookModal") closeBooking(); });
+
+function calc(){
+  const room=ROOMS.find(r=>r.id===bk.room);
+  const n=nightsBetween(bk.cin,bk.cout);
+  let roomTotal=0, weekendNights=0;
+  for(let i=0;i<n;i++){ const d=addDays(new Date(bk.cin),i).getDay(); const wk=(d===5||d===6); if(wk) weekendNights++; roomTotal+= room.rate*(wk?1.15:1); }
+  const addons=[...cart].map(id=>EXPS.find(e=>e.id===id));
+  const addonTotal=addons.reduce((a,e)=>a+e.price,0);
+  const code=(bk.promo||"").trim().toUpperCase();
+  const promoPct = code==="CIRCLE5"?0.05 : code==="MBA2026"?0.10 : 0;
+  const promoDisc = roomTotal*promoPct;
+  const nightly = n>0 ? (roomTotal-promoDisc)/n : 0;
+  const gstRate = nightly<=7500 ? 0.05 : 0.18;  // indicative GST slab on room tariff
+  const gst=(roomTotal-promoDisc)*gstRate + addonTotal*0.18;
+  return {room,n,roomTotal,weekendNights,addons,addonTotal,promoPct,promoDisc,gstRate,gst,total:roomTotal-promoDisc+addonTotal+gst};
+}
+function renderBookForm(err){
+  const c=calc();
+  $("bookBox").innerHTML=`
+    <button class="close" onclick="closeBooking()">×</button>
+    <div class="eyebrow">Step 1 of 2 · Your stay</div>
+    <h2 style="font-size:2rem">Book direct & save 10%</h2>
+    <div class="form-grid">
+      <div class="full"><label>Room</label><select onchange="bk.room=this.value;renderBookForm()">${ROOMS.map(r=>`<option value="${r.id}" ${r.id===bk.room?"selected":""}>${r.name} – ${inr(r.rate)}/night</option>`).join("")}</select></div>
+      <div><label>Check-in</label><input type="date" value="${bk.cin}" onchange="bk.cin=this.value;renderBookForm()"></div>
+      <div><label>Check-out</label><input type="date" value="${bk.cout}" onchange="bk.cout=this.value;renderBookForm()"></div>
+      <div><label>Guests</label><select onchange="bk.guests=+this.value;renderBookForm()">${[1,2,3,4].map(g=>`<option ${g===bk.guests?"selected":""}>${g}</option>`).join("")}</select></div>
+      <div><label>Promo code (try MBA2026)</label><input value="${bk.promo}" onchange="bk.promo=this.value;renderBookForm()"></div>
+      <div class="full addons"><label>Add experiences</label>${EXPS.map(e=>`<label><input type="checkbox" ${cart.has(e.id)?"checked":""} onchange="toggleExp('${e.id}');renderBookForm()"> ${e.icon} ${e.name} (${inr(e.price)})</label>`).join("")}</div>
+      <div><label>Full name</label><input id="bName" value="${bk.name||""}"></div>
+      <div><label>Phone (WhatsApp)</label><input id="bPhone" value="${bk.phone||""}"></div>
+      <div class="full"><label>Email</label><input id="bEmail" type="email" value="${bk.email||""}"></div>
+      <div class="full"><label>Occasion (helps us personalise)</label><select id="bOcc">${["None","Anniversary","Birthday","Honeymoon","Workcation","Family trip"].map(o=>`<option ${bk.occasion===o?"selected":""}>${o}</option>`).join("")}</select></div>
+    </div>
+    ${c.n>0 && bk.guests>c.room.guests ? `<p class="err">${c.room.name} fits up to ${c.room.guests} guests. Please choose a larger room.</p>`:""}
+    ${c.n>0 ? `<div class="breakdown">
+      <div><span>${c.room.name} × ${c.n} night${c.n>1?"s":""}${c.weekendNights?` (${c.weekendNights} weekend)`:""}</span><span>${inr(c.roomTotal)}</span></div>
+      ${c.promoPct?`<div><span>Promo ${bk.promo.toUpperCase()} (${c.promoPct*100}%)</span><span>−${inr(c.promoDisc)}</span></div>`:""}
+      ${c.addons.length?`<div><span>Experiences (${c.addons.length})</span><span>${inr(c.addonTotal)}</span></div>`:""}
+      <div><span>GST (est. ${c.gstRate*100}% room, 18% services)</span><span>${inr(c.gst)}</span></div>
+      <div><span>Direct perks</span><span>Free breakfast + late checkout</span></div>
+      <div class="tot"><span>Total payable</span><span>${inr(c.total)}</span></div>
+    </div>` : `<p class="err">Check-out must be after check-in.</p>`}
+    ${err?`<p class="err">${err}</p>`:""}
+    <p style="font-size:.8rem;color:var(--muted);margin-top:10px">Free cancellation up to 7 days before arrival. 50% refund 3–7 days before.</p>
+    <button class="btn gold" style="margin-top:14px;width:100%" onclick="confirmBooking()">Pay ${c.n>0?inr(c.total):""} securely (UPI / Card) · demo</button>`;
+}
+function confirmBooking(){
+  bk.name=$("bName").value.trim(); bk.phone=$("bPhone").value.trim(); bk.email=$("bEmail").value.trim(); bk.occasion=$("bOcc").value;
+  const c=calc();
+  if(!(c.n>0)) return renderBookForm("Please choose valid dates.");
+  if(bk.guests>c.room.guests) return renderBookForm("Too many guests for this room.");
+  if(!bk.name||!/^\S+@\S+\.\S+$/.test(bk.email)||bk.phone.replace(/\D/g,"").length<10) return renderBookForm("Please enter your name, a valid email and a 10-digit phone number.");
+  const id="ARN-"+Math.random().toString(36).slice(2,8).toUpperCase();
+  mem.bookings.push({id, room:bk.room, nights:c.n, revenue:Math.round(c.total-c.gst), addons:c.addons.length, source:bk.source, channel:"Direct website", date:iso(new Date())});
+  store.set("aranya_bookings", mem.bookings);
+  track("booking_completed");
+  const leaves=Math.floor(c.total/100);
+  $("bookBox").innerHTML=`
+    <button class="close" onclick="closeBooking()">×</button>
+    <div class="eyebrow">Step 2 of 2 · Confirmed</div>
+    <h2 style="font-size:2rem">You're going to Coorg, ${bk.name.split(" ")[0]}! 🌿</h2>
+    <p style="margin-top:8px">Booking ID <b>${id}</b> · ${c.room.name} · ${c.n} night${c.n>1?"s":""} · ${inr(c.total)} paid</p>
+    <p style="color:var(--muted);font-size:.9rem">You earned <b>${leaves} Aranya Circle Leaves</b>.</p>
+    <h3 style="margin-top:18px;color:var(--forest)">What happens next</h3>
+    <ul class="timeline">
+      <li><b>Now:</b> confirmation sent to ${bk.email} and WhatsApp ${bk.phone}.</li>
+      <li><b>Within 1 hour:</b> your room is locked in our property system and blocked on all booking sites.</li>
+      ${c.addons.length?`<li><b>Within 24 hours:</b> your ${c.addons.length} experience${c.addons.length>1?"s are":" is"} scheduled with our local partners.</li>`:""}
+      <li><b>3 days before arrival:</b> AI concierge messages you for arrival time, food preferences${bk.occasion!=="None"?` and ${bk.occasion.toLowerCase()} surprises`:""}.</li>
+      <li><b>On arrival:</b> no front desk. Filter coffee, your key and a personalised itinerary.</li>
+      <li><b>After checkout:</b> feedback request, Leaves credited, and a return-guest offer.</li>
+    </ul>
+    <button class="btn" style="margin-top:18px" onclick="closeBooking();document.getElementById('boardroom').scrollIntoView()">See this booking in the KPI dashboard →</button>`;
+  cart.clear(); renderExps();
+}
+
+/* ---------------- LOYALTY ---------------- */
+function joinCircle(e){ e.preventDefault(); const em=$("joinEmail").value; mem.members.push(em); store.set("aranya_members",mem.members); track("loyalty_signups");
+  $("joinEmail").value=""; toast("Welcome to the Circle! Use code CIRCLE5 for an extra 5% off."); }
+
+/* ---------------- REVIEWS ---------------- */
+function renderReviews(){
+  $("reviewGrid").innerHTML=REVIEWS.map(r=>`<div class="review"><div class="stars">${"★".repeat(r.s)}${"☆".repeat(5-r.s)}</div><p style="margin:8px 0">"${r.t}"</p><b style="font-size:.85rem">${r.n}</b></div>`).join("");
+  const aspects=[["Location",4.6],["Rooms",4.9],["Food",4.8],["Service",4.9],["Value",4.5],["Access road",3.8]];
+  $("aspects").innerHTML=aspects.map(a=>`<div class="bar-row"><span>${a[0]}</span><div class="bar"><i style="width:${a[1]/5*100}%"></i></div><b>${a[1]}</b></div>`).join("");
+}
+
+/* ---------------- CHATBOT ---------------- */
+function toggleChat(){ const c=$("chat"); c.classList.toggle("open");
+  if(c.classList.contains("open") && !$("chatLog").children.length){ track("chat_sessions"); bot("Hi! I'm Aranya's AI concierge 🌿 Ask me about rooms, prices, getting here, or let me plan your trip."); } }
+function bot(t){ const d=document.createElement("div"); d.className="msg bot"; d.innerHTML=t; $("chatLog").appendChild(d); $("chatLog").scrollTop=1e6; }
+function me(t){ const d=document.createElement("div"); d.className="msg me"; d.textContent=t; $("chatLog").appendChild(d); }
+function ask(t){ if(!$("chat").classList.contains("open")) toggleChat(); me(t); track("chat_messages"); setTimeout(()=>bot(reply(t)),450); }
+function sendChat(e){ e.preventDefault(); const v=$("chatIn").value.trim(); if(!v) return; $("chatIn").value=""; ask(v); }
+function reply(t){
+  t=t.toLowerCase();
+  const has=(...w)=>w.some(x=>t.includes(x));
+  if(has("rate","price","cost","tariff","cheap","how much")) return "Direct rates per night: "+ROOMS.map(r=>`${r.name} ${inr(r.rate)}`).join(", ")+". Weekends are 15% higher. Booking here is always 10% cheaper than apps, with free breakfast.";
+  if(has("reach","airport","distance","drive","bus","train","how do i get","location","where")) return "We're near Madikeri, Coorg. By road it's about 260 km (5 hrs) from Bengaluru. Nearest airports: Kannur (~90 km) and Mysuru (~120 km). We arrange airport pickups on request.";
+  if(has("romantic","anniversary","honeymoon","couple")) return "For couples I'd suggest the <b>Treehouse Hideaway</b> with the candlelit estate dinner and forest spa. <a href='#planner' onclick=\"pick('purpose','Romantic getaway')\">Open the Trip Designer</a> to price it in one click.";
+  if(has("family","kids","children","child")) return "The <b>Heritage Kodava Villa</b> sleeps 4 with a private plunge pool. Kids love the cooking class and the Dubare river day.";
+  if(has("work","wifi","wi-fi","internet","laptop")) return "Every room has 100 Mbps fibre Wi-Fi with a power backup. The Coffee Estate Room has a work desk facing the valley. Ask about our weekly workcation rate.";
+  if(has("cancel","refund")) return "Free cancellation up to 7 days before arrival. 50% refund between 3 and 7 days. No refund within 72 hours, but you can move your dates once for free.";
+  if(has("check-in","check in","checkout","check-out","time")) return "Check-in is from 2 PM and check-out by 11 AM. Direct bookers get late checkout till 1 PM.";
+  if(has("pet","dog")) return "Yes! The Coffee Estate Rooms are pet-friendly (₹1,500 per stay cleaning fee).";
+  if(has("food","veg","breakfast","restaurant","jain","menu")) return "Our restaurant Kaapi & Kole serves Kodava, South Indian and global dishes. Veg, Jain and vegan options are always available. Breakfast is free for direct bookings.";
+  if(has("weather","monsoon","best time","season")) return "Oct–Mar is cool and clear (best for treks). Jun–Sep is the misty monsoon, lush and romantic, with our 'Monsoon in the Mist' offer.";
+  if(has("book","reserve","availability","available")) { setTimeout(()=>openBooking(),600); return "Opening the booking window for you now…"; }
+  if(has("human","person","agent","call","talk")) return "Connecting you to our guest team on WhatsApp. A human will reply within 10 minutes (7 AM–11 PM).";
+  if(has("hi","hello","hey")) return "Hello! Are you planning a romantic escape, a family holiday or a workcation?";
+  track("chat_handoffs");
+  return "Good question! I've passed it to our guest team, who'll reply on WhatsApp shortly. Meanwhile, try asking about rates, rooms or getting here.";
+}
+
+/* ---------------- BOARDROOM ---------------- */
+let dimIdx=0;
+function renderDims(){
+  $("dimTabs").innerHTML=DIMS.map((d,i)=>`<button class="${i===dimIdx?"active":""}" onclick="dimIdx=${i};renderDims()">${i+1}. ${d.k}</button>`).join("");
+  const d=DIMS[dimIdx]; $("dimBody").innerHTML=`<h3>${d.h}</h3><ul>${d.li.map(l=>`<li>${l}</li>`).join("")}</ul>`;
+}
+function bars(rows, fmt){ const max=Math.max(1,...rows.map(r=>r[1]));
+  return rows.map(r=>`<div class="bar-row"><span>${r[0]}</span><div class="bar"><i style="width:${r[1]/max*100}%"></i></div><b>${fmt?fmt(r[1]):r[1]}</b></div>`).join(""); }
+function renderDashboard(){
+  if(!$("kpis")) return;
+  const B=mem.bookings, E=mem.events;
+  const rev=B.reduce((a,b)=>a+b.revenue,0), roomNights=B.reduce((a,b)=>a+b.nights,0);
+  const capacity=18*31;
+  const occ=Math.min(100, roomNights/capacity*100), adr=roomNights?rev/roomNights:0, revpar=rev/capacity;
+  const visits=E.visits||0, conv=visits?(B.filter(b=>b.channel==="Direct website").length/visits*100):0;
+  const direct=B.filter(b=>b.channel==="Direct website").length, share=B.length?direct/B.length*100:0;
+  const attach=B.length?B.filter(b=>b.addons>0).length/B.length*100:0;
+  const k=[["Total bookings",B.length],["Revenue (ex-GST)",inr(rev)],["Occupancy (Oct)",occ.toFixed(1)+"%"],["ADR",inr(adr)],
+           ["RevPAR",inr(revpar)],["Website conversion",conv.toFixed(1)+"%"],["Direct booking share",share.toFixed(0)+"%"],["Add-on attach rate",attach.toFixed(0)+"%"]];
+  $("kpis").innerHTML=k.map(x=>`<div class="kpi"><div class="v">${x[1]}</div><div class="l">${x[0]}</div></div>`).join("");
+  $("funnel").innerHTML=bars([["Visits",visits],["Room views",E.room_views||0],["Booking started",E.booking_started||0],["Booked",E.booking_completed||0]]);
+  $("revByRoom").innerHTML=bars(ROOMS.map(r=>[r.name.split(" ").slice(0,2).join(" "), B.filter(b=>b.room===r.id).reduce((a,b)=>a+b.revenue,0)]), v=>"₹"+(v/100000).toFixed(1)+"L");
+  const ch={}; B.forEach(b=>ch[b.channel]=(ch[b.channel]||0)+1);
+  $("channels").innerHTML=Object.keys(ch).length?bars(Object.entries(ch)):"<p style='color:#9fb5a8'>No bookings yet. Make a demo booking or load sample data.</p>";
+  const chat=E.chat_sessions||0, handoff=E.chat_handoffs||0, msgs=E.chat_messages||0;
+  const containment=msgs?((msgs-handoff)/msgs*100).toFixed(0)+"%":"–";
+  $("aiStats").innerHTML=bars([["Chat sessions",chat],["Trip designs",E.quiz_completed||0],["Design → booking",E.quiz_to_booking||0],["Loyalty sign-ups",E.loyalty_signups||0]])
+    +`<p style="font-size:.85rem;color:#9fb5a8;margin-top:8px">Chatbot containment rate (answered without a human): <b style="color:#fff">${containment}</b></p>`;
+}
+function seedData(){
+  const channels=["Direct website","Direct website","Direct website","Booking.com","MakeMyTrip","Agoda","Corporate"];
+  const weights={estate:5,canopy:3,tree:2,villa:2}, pool=[];
+  Object.entries(weights).forEach(([k,w])=>{for(let i=0;i<w;i++)pool.push(k);});
+  for(let i=0;i<150;i++){
+    const room=pool[Math.floor(Math.random()*pool.length)], r=ROOMS.find(x=>x.id===room), nights=1+Math.floor(Math.random()*3);
+    const addons=Math.random()<0.45?1+Math.floor(Math.random()*2):0;
+    const revenue=Math.round(r.rate*nights*1.05 + addons*2200);
+    mem.bookings.push({id:"S"+i, room, nights, revenue, addons, source:"Sample", channel:channels[Math.floor(Math.random()*channels.length)], date:"2026-10"});
+  }
+  const add={visits:6400,room_views:2700,booking_started:420,booking_completed:96,chat_sessions:880,chat_messages:2650,chat_handoffs:340,quiz_completed:610,quiz_to_booking:58,loyalty_signups:210,tour_views:1900};
+  Object.entries(add).forEach(([k,v])=>mem.events[k]=(mem.events[k]||0)+v);
+  store.set("aranya_bookings",mem.bookings); store.set("aranya_events",mem.events);
+  renderDashboard(); toast("Sample month loaded: 150 bookings");
+}
+function resetData(){ mem={events:{},bookings:[],members:[]}; store.set("aranya_events",{}); store.set("aranya_bookings",[]); store.set("aranya_members",[]); renderDashboard(); toast("Dashboard reset"); }
+
+/* ---------------- INIT ---------------- */
+renderRooms(); renderTour(); renderQuiz(); renderExps(); renderReviews(); renderDims();
+track("visits");
+document.querySelectorAll("#navlinks a").forEach(a=>a.addEventListener("click",()=>$("navlinks").classList.remove("open")));
+</script>
+</body>
+</html>
